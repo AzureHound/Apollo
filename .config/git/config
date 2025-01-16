@@ -1,0 +1,30 @@
+[include]
+  path = ~/.config/git/themes/catppuccin.gitconfig
+
+[user]
+  name = User 
+  email = user@email.com
+
+[safe]
+  directory = ~/Developer
+
+[init]
+  defaultBranch = main
+
+[core]
+  editor = nvim
+  pager = delta
+  excludesfile = ~/.config/git/ignore
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = catppuccin-macchiato
+  side-by-side = false
+  true-color = always
+  hyperlinks = true
+  line-numbers = true
+
+[pull]
+  rebase = false
