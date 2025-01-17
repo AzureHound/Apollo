@@ -2,8 +2,8 @@
   path = ~/.config/git/themes/catppuccin.gitconfig
 
 [user]
-  name = User 
-  email = user@email.com
+  name = Wolf
+  email = 183492338+AzureHound@users.noreply.github.com
 
 [safe]
   directory = ~/Developer
