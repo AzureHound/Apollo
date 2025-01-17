@@ -153,7 +153,6 @@ gnome-desktop-4 1:44.1-1
 gnome-desktop-common 1:44.1-1
 gnome-firmware 47.0-1
 gnome-keyring 1:46.2-1
-gnome-logs 45.0-1
 gnu-free-fonts 20120503-8
 gnu-netcat 0.7.1-10
 gnulib-l10n 20241231-1
