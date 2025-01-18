@@ -4,7 +4,7 @@
 include "/home/eyes/.gtkrc-2.0.mine"
 gtk-theme-name="Adwaita"
 gtk-icon-theme-name="Adwaita"
-gtk-font-name="Josefin Sans 11"
+gtk-font-name="Josefin Sans 9"
 gtk-cursor-theme-name="Bibata-Modern-Ice"
 gtk-cursor-theme-size=20
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
