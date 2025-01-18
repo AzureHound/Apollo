@@ -1,22 +1,27 @@
 [general]
 fullscreen = false
-early-exit = false
+early-exit = true
+corner-roundness = 80
 initial-tool = "brush"
 copy-command = "wl-copy"
 annotation-size-factor = 2
 output-filename = "/tmp/test-%Y-%m-%d_%H:%M:%S.png"
+action-on-enter = "save-to-clipboard"
 save-after-copy = false
 default-hide-toolbars = false
-disable-notifications = true
+primary-highlighter = "block"
+disable-notifications = false
 
 [font]
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [color-palette]
-first = "#8aadf4"  # Blue
-second = "#ed8796" # Red
-third = "#a6da95"  # Green
-fourth = "#eed49f" # Yellow
-fifth = "#c6a0f6"  # Mauve
-custom = "#cad3f5" # White
+palette = [
+    "#8aadf4", # Blue
+    "#ed8796", # Red
+    "#a6da95", # Green
+    "#eed49f", # Yellow
+    "#c6a0f6", # Mauve
+    "#cad3f5", # White
+]
