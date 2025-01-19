@@ -117,7 +117,9 @@ function y
 end
 
 # editor
-export EDITOR=nvim
+set -xg EDITOR nvim
+set -xg VISUAL $EDITOR
+set -xg SUDO_EDITOR $EDITOR
 
 # nvims
 #function neovims
