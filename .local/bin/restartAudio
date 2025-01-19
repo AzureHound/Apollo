@@ -1,10 +1,23 @@
 #!/bin/bash
-pkill easyeffects
 
-wait
+pkill easyeffects # Kill EasyEffects if running
 
-systemctl --user restart wireplumber pipewire pipewire-pulse
+wait # Wait for processes to terminate
 
-notify-send "Audio restarted" "Audio services have been restarted" -i ~/.local/share/icons/Catppuccin-SE/64x64/mimetypes/audio-x-generic.svg --app-name=Audio
+# Restart PipeWire-related services and handle errors
+if ! systemctl --user restart wireplumber pipewire pipewire-pulse; then
+    notify-send "Audio Error" "Failed to restart audio services" --urgency=critical
+    echo "$(date): Failed to restart audio services" >> ~/.audio_restart.log
+    exit 1
+fi
 
+# Send a notification indicating success
+notify-send "Audio Restarted" "Audio services have been restarted" \
+    -i ~/.config/hypr/themes/icons/scalable/devices/audio-headphones.svg \
+    --app-name=Audio
+
+# Log the restart event
+echo "$(date): Audio services restarted successfully" >> ~/.audio_restart.log
+
+# Start EasyEffects in daemon mode
 easyeffects --gapplication-service &
