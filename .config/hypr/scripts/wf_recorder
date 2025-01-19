@@ -1,0 +1,29 @@
+#!/bin/env bash
+
+# Ensure wf-recorder is installed
+if ! command -v wf-recorder &> /dev/null; then
+    notify-send -u critical "wf-recorder not found!" "Please install wf-recorder."
+    exit 1
+fi
+
+# Stop recording if already running
+if pgrep -x "wf-recorder" > /dev/null; then
+    pkill -INT -x wf-recorder
+    notify-send -h string:wf-recorder:record -t 1000 "Finished Recording"
+    exit 0
+fi
+
+# Countdown notifications
+for i in {3..1}; do
+    notify-send -h string:wf-recorder:record -t 1000 "Recording in:" \
+        "<span color='#90a4f4' font='26px'><i><b>$i</b></i></span>"
+    sleep 1
+done
+
+# Set filename with sanitized datetime
+dateTime=$(date +%Y-%m-%d_%H-%M-%S)
+outputDir="$HOME/Videos/Screen Recording"
+mkdir -p "$outputDir"  # Ensure the Videos directory exists
+
+# Start recording
+wf-recorder --bframes max_b_frames -f "$outputDir/$dateTime.mp4"
