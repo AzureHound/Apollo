@@ -81,6 +81,8 @@ export FZF_DEFAULT_OPTS=" \
 
 export BAT_THEME="Catppuccin Macchiato" # base16-256, Dracula
 export EDITOR=nvim
+export VISUAL="$EDITOR"
+export SUDO_EDITOR $EDITOR
 
 # Starship
 # eval "$(starship init zsh)"
