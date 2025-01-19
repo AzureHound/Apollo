@@ -1,15 +1,40 @@
 [pyprland]
 plugins = ["scratchpads", "magnify", "wallpapers"]
 
-# [scratchpads.volume]
-# command = "pavucontrol"
-# unfocus = "hide"
-# position = "1% 8%"
-# lazy = true
-# force_monitor = "DP-1"
-
 [scratchpads.terminal]
 command = "kitty --class scratchpad-large"
+lazy = true
+
+[scratchpads.bluetui]
+command = "kitty --class scratchpad-large bluetui"
+lazy = true
+
+[scratchpads.bonsai]
+command = "kitty --class scratchpad-large cbonsai --seed 119"
+lazy = true
+
+[scratchpads.btop]
+command = "kitty --class scratchpad-large btop"
+lazy = true
+
+[scratchpads.cava]
+command = "kitty --class scratchpad-large cava"
+lazy = true
+
+[scratchpads.gpt]
+command = "kitty --class scratchpad-large tgpt -m"
+lazy = true
+
+[scratchpads.lazydocker]
+command = "kitty --class scratchpad-large lazydocker"
+lazy = true
+
+[scratchpads.nvitop]
+command = "kitty --class scratchpad-large nvitop"
+lazy = true
+
+[scratchpads.tt]
+command = "kitty --class scratchpad-large tt -theme ~/.tt/Catppuccin-Macchiato"
 lazy = true
 
 [scratchpads.yazi]
@@ -18,51 +43,22 @@ unfocus = "hide"
 hysteresis = 0.1
 lazy = true
 
-[scratchpads.gpt]
-command = "kitty --class scratchpad-large tgpt -m"
-lazy = true
-
-# [scratchpads.dots]
-# command = "kitty --class scratchpad-large yadm enter lazygit"
+# [scratchpads.volume]
+# command = "pavucontrol"
+# unfocus = "hide"
+# position = "1% 8%"
 # lazy = true
+# force_monitor = "DP-1"
 
-[scratchpads.btop]
-command = "kitty --class scratchpad-large btop"
-lazy = true
-
-[scratchpads.nvtop]
-command = "kitty --class scratchpad-large nvtop"
-lazy = true
-
-# [scratchpads.topgrade-system]
-# command = "kitty --class scratchpad-large fish -c 'up'"
+# [scratchpads.bluetooth]
+# command = "overskride"
+# animation = "fromRight"
+# margin = 20
 # lazy = true
-#
-# [scratchpads.topgrade-all]
-# command = "kitty --class scratchpad-large fish -c 'upall'"
-# lazy = true
-
-[scratchpads.bluetooth]
-command = "overskride"
-animation = "fromRight"
-margin = 20
-lazy = true
-
-[scratchpads.wifi]
-command = "iwgtk"
-animation = "fromRight"
-margin = 20
-lazy = true
-
-[scratchpads.network]
-command = "nm-connection-editor"
-animation = "fromRight"
-margin = 20
-lazy = true
 
 [wallpapers]
 path = "~/Developer/repos/Wallpapers/"
-interval = 60                                                                                                                                                                                               # change every hour
-command = "swww img --transition-bezier 0.5,1.19,.8,.4 --transition-type wipe --transition-duration 2 --transition-fps 75 \"[file]\" && notify-send 'Wallpaper Changed' -i \"[file]\" --app-name=Wallpaper"
+interval = 10 # minutes
+command = "swww img --transition-bezier 0.5,1.19,.8,.4 --transition-type wipe --transition-duration 2 --transition-fps 75 \"[file]\""
 clear_command = "swww clear"
-extensions = ["jpg", "png", "gif", "jpeg"]
+extensions = ["jpg", "png", "gif", "jpeg", "webp"]
